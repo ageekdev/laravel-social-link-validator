@@ -27,7 +27,7 @@ composer require ageekdev/laravel-social-link-validator
 
 ### add new platform
 
-To add new platform by your self
+To add new platform by yourself
 - create new class in `src/Validators/Platforms` folder
 - import created new class in `src/config/config.php`
 
