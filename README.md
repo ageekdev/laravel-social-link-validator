@@ -48,17 +48,17 @@ $validated = $request->validate([
 ]);
 ```
 
-To Check Platform of url
+To Check Platform of link
 ```php
 $platform = (new SocialLinkValidator())->guess($link);
 ```
 
 To Validate of url of platform
 ```php
-$platform = (new SocialLinkValidator())->guess($value);
+$platform = (new SocialLinkValidator())->guess($link);
 
 if ($platform) {
-    $isValid = (new SocialLinkValidator())->driver($platform)->isValid($value);
+    $isValid = (new SocialLinkValidator())->driver($platform)->isValid($link);
 }
 ```
 
