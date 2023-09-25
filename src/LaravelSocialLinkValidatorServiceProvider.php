@@ -20,12 +20,16 @@ class LaravelSocialLinkValidatorServiceProvider extends ServiceProvider
             $this->mergeConfigFrom(__DIR__.'/config/config.php', 'laravel-social-link-validator');
 
             Validator::extend('social_link', function ($attribute, $value, $parameters, $validator) {
-                $customRule = new SocialLink(); // Create an instance of your custom rule class
+                $customRule = new SocialLink($parameters);
                 return $customRule->passes($attribute, $value);
             });
 
             Validator::replacer('social_link', function ($message, $attribute, $rule, $parameters) {
-                return str_replace(':attribute', $attribute, 'The :attribute is invalid.');
+                if(isset($parameters[0]) && $platform = $parameters[0])
+                {
+                        return str_replace([':attribute', ':platform'], [$attribute, $platform], "The :attribute is invalid for :platform platform");
+                }
+                return str_replace(':attribute', $attribute, "The :attribute is invalid. ");
             });
     }
 
