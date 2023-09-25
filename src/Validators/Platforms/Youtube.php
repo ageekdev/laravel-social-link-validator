@@ -1,8 +1,8 @@
 <?php
 
-namespace Ageekdev\LaravelSocialLinkValidator\Validators\Platforms;
+namespace AgeekDev\SocialLinkValidator\Validators\Platforms;
 
-use Ageekdev\LaravelSocialLinkValidator\Validators\AbstractValidator;
+use AgeekDev\SocialLinkValidator\Validators\AbstractValidator;
 
 class Youtube extends AbstractValidator
 {

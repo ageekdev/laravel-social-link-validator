@@ -1,6 +1,6 @@
 {
     "name": "ageekdev/laravel-social-link-validator",
-    "description": "",
+    "description": "To validate the social profile link",
     "keywords": [
         "ageekdev",
         "laravel-social-link-validator"
@@ -16,40 +16,52 @@
         }
     ],
     "require": {
-        "php": "^7.4|^8.0"
+        "php": "^8.0",
+        "illuminate/support": "^9.0|^10.0"
     },
     "require-dev": {
-        "laravel/pint": "^1.13",
-        "orchestra/testbench": "^6.0",
-        "pestphp/pest": "^1.23",
-        "phpunit/phpunit": "^9.0"
+        "laravel/pint": "^1.10",
+        "nunomaduro/collision": "^6.0|^7.0",
+        "nunomaduro/larastan": "^2.0",
+        "orchestra/testbench": "^7.0|^8.0",
+        "pestphp/pest": "^1.0|^2.0",
+        "pestphp/pest-plugin-laravel": "^1.4|^2.0",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "phpstan/phpstan-phpunit": "^1.0",
+        "roave/security-advisories": "dev-latest"
     },
     "autoload": {
         "psr-4": {
-            "Ageekdev\\LaravelSocialLinkValidator\\": "src"
+            "AgeekDev\\SocialLinkValidator\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Ageekdev\\LaravelSocialLinkValidator\\Tests\\": "tests"
+            "AgeekDev\\SocialLinkValidator\\Tests\\": "tests"
         }
     },
     "scripts": {
-        "test": "vendor/bin/phpunit",
-        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
-
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
     },
     "config": {
         "sort-packages": true,
         "allow-plugins": {
-            "pestphp/pest-plugin": true
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Ageekdev\\LaravelSocialLinkValidator\\LaravelSocialLinkValidatorServiceProvider"
-            ]
+                "SocialLinkValidatorServiceProvider"
+            ],
+            "aliases": {
+                "SocialLinkValidator": "AgeekDev\\SocialLinkValidator\\Facades\\SocialLinkValidator"
+            }
         }
     }
 }

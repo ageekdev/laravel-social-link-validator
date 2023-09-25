@@ -1,6 +1,6 @@
 <?php
 
-namespace Ageekdev\LaravelSocialLinkValidator\Validators;
+namespace AgeekDev\SocialLinkValidator\Validators;
 
 abstract class AbstractValidator implements ValidatorInterface
 {
@@ -9,7 +9,7 @@ abstract class AbstractValidator implements ValidatorInterface
     protected array $patternMaps = ['fail', 0];
 
     /**
-     * Normalizes a url.
+     * Normalizes url.
      * This method should be overwritten by the
      * driver itself, if needed.
      */

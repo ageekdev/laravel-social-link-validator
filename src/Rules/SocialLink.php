@@ -1,8 +1,8 @@
 <?php
 
-namespace Ageekdev\LaravelSocialLinkValidator\Rules;
+namespace AgeekDev\SocialLinkValidator\Rules;
 
-use Ageekdev\LaravelSocialLinkValidator\SocialLinkValidator;
+use AgeekDev\SocialLinkValidator\SocialLinkValidator;
 use Illuminate\Contracts\Validation\Rule;
 
 class SocialLink implements Rule
@@ -12,7 +12,7 @@ class SocialLink implements Rule
         $platform = (new SocialLinkValidator())->guess($value);
 
         if ($platform) {
-            return (new SocialLinkValidator(config('laravel-social-link-validator')))->driver($platform)->isValid($value);
+            return (new SocialLinkValidator(config('social-link-validator.platforms')))->driver($platform)->isValid($value);
         }
 
         return false;

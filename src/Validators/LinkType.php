@@ -1,6 +1,6 @@
 <?php
 
-namespace Ageekdev\LaravelSocialLinkValidator\Validators;
+namespace AgeekDev\SocialLinkValidator\Validators;
 
 class LinkType
 {
@@ -24,12 +24,10 @@ class LinkType
 
     public function toJson(): string
     {
-        return json_encode(
-            [
-                'isValid' => $this->isValid,
-                'type' => $this->type,
-                'id' => $this->id,
-            ]
-        );
+        return json_encode([
+            'isValid' => $this->isValid,
+            'type' => $this->type,
+            'id' => $this->id,
+        ]);
     }
 }
