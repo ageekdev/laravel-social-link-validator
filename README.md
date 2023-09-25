@@ -25,7 +25,7 @@ composer require ageekdev/laravel-social-link-validator
 | Whatsapp      | whatsapp       |  
 | Youtube       | youtube        |  
 
-### New Platform
+### add new platform
 
 To add new platform by your self
 - create new class in `src/Validators/Platforms` folder
