@@ -2,7 +2,7 @@
 
 namespace AgeekDev\SocialLinkValidator\Rules;
 
-use AgeekDev\SocialLinkValidator\SocialLinkValidator;
+use AgeekDev\SocialLinkValidator\Facades\SocialLinkValidator;
 use Illuminate\Contracts\Validation\Rule;
 
 class SocialLink implements Rule
@@ -14,16 +14,16 @@ class SocialLink implements Rule
 
     public function passes($attribute, $value): bool
     {
-        if (($platform = $this->parameters[0]) && ! in_array($platform, array_keys(config('social-link-validator')))) {
+        if (($platform = $this->parameters[0]) && ! in_array($platform, array_keys(config('social-link-validator.platforms')))) {
             return false;
         }
 
         if (empty($platform)) {
-            $platform = (new SocialLinkValidator())->guess($value);
+            $platform = SocialLinkValidator::guess($value);
         }
 
         if ($platform) {
-            return (new SocialLinkValidator(config('social-link-validator')))->driver($platform)->isValid($value);
+            return SocialLinkValidator::driver($platform)->isValid($value);
         }
 
         return false;
