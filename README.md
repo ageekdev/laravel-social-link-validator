@@ -13,6 +13,17 @@ You can install the package via composer:
 composer require ageekdev/laravel-social-link-validator
 ```
 
+## Supported Platforms
+- Facebook
+- Instagram
+- Line
+- Linkedin
+- Twitter
+- Whatsapp
+- Youtube
+
+Ps : you can add new platform by yourself in `src/Validators/Platforms` folder
+
 ## Usage
 
 We can use as validation rule to validate in Request.
