@@ -62,10 +62,6 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
-### Security
-
-If you discover any security related issues, please email mr.yethusoe@gmail.com instead of using the issue tracker.
-
 ## Credits
 
 - [Claudio Pinto](https://github.com/cfpinto)
