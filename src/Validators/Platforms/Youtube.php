@@ -8,8 +8,8 @@ class Youtube extends AbstractValidator
 {
     /** inline {@inheritdoc} */
     protected array $patterns = [
-        '~www.youtube.com/?\?v=([a-z0-9_-]+)~i',
-        '~www.youtube.com/(channel|user)/([^/]+)~i',
+        '~youtube.com/?\?v=([a-z0-9_-]+)~i',
+        '~youtube.com/(channel|user)/([^/]+)~i',
     ];
 
     protected array $patternMaps = [
