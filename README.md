@@ -16,42 +16,49 @@ You can install the package via composer:
 composer require ageekdev/laravel-social-link-validator
 ```
 
-## Supported Platforms
-- Facebook
-- Instagram
-- Line
-- Linkedin
-- Twitter
-- Whatsapp
-- Youtube
+### Supported Platforms
 
-Ps : you can add new platform by yourself in `src/Validators/Platforms` folder
+| Platform Name | slug           | 
+|---------------|----------------|
+| Facebook      | facebook       |  
+| Instagram     | instagram      |  
+| Line          | line           |  
+| Linkedin      | linkedin       |  
+| Twitter       | twitter        |  
+| Whatsapp      | whatsapp       |  
+| Youtube       | youtube        |
 
 ## Usage
 
 We can use as validation rule to validate in Request.
-
 ```php
 $validated = $request->validate([
     'link' => 'social_link'
 ]);
 ```
 
-To Check Platform of url
+Validate with platform slug
+```php
+$validated = $request->validate([
+    'facebook_link' => 'social_link:facebook'
+]);
+```
+
+To Check Platform of URL
 ```php
 use AgeekDev\SocialLinkValidator\Facades\Barcode;
 
 $platform = SocialLinkValidator::guess($link);
 ```
 
-To Validate of url of platform
+To Validate of URL of platform
 ```php
 use AgeekDev\SocialLinkValidator\Facades\Barcode;
 
-$platform = SocialLinkValidator::guess($value);
+$platform = SocialLinkValidator::guess($url);
 
 if ($platform) {
-    $isValid = SocialLinkValidator::driver($platform)->isValid($value);
+    $isValid = SocialLinkValidator::driver($platform)->isValid($url);
 }
 ```
 
@@ -60,6 +67,12 @@ if ($platform) {
 ```bash
 composer test
 ```
+
+## Request or add new platform
+Please create PR or issue for it if it does not already exist.
+- create new platform class in `src/Validators/Platforms` folder.
+- add new class in `config/social-link-validator.php`.
+- Then PR you code for review.
 
 ## Changelog
 
