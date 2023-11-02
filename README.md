@@ -46,14 +46,14 @@ $validated = $request->validate([
 
 To Check Platform of URL
 ```php
-use AgeekDev\SocialLinkValidator\Facades\Barcode;
+use AgeekDev\SocialLinkValidator\Facades\SocialLinkValidator;
 
 $platform = SocialLinkValidator::guess($link);
 ```
 
 To Validate of URL of platform
 ```php
-use AgeekDev\SocialLinkValidator\Facades\Barcode;
+use AgeekDev\SocialLinkValidator\Facades\SocialLinkValidator;
 
 $platform = SocialLinkValidator::guess($url);
 
