@@ -2,6 +2,14 @@
 
 All notable changes to `php-social-link-validator` will be documented in this file
 
+## support laravel 11 - 2024-04-08
+
+### What's Changed
+
+- update composer.json for laravel 11
+
+**Full Changelog**: https://github.com/ageekdev/laravel-social-link-validator/compare/v1.0.0...v1.0.1
+
 ## v1.0.0 - 2023-10-23
 
 We are excited to announce the initial release of ageekdev/laravel-social-link-validator version 1.0.0! This marks a significant milestone for the package. Here's what you can expect from this inaugural version:
