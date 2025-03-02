@@ -17,7 +17,7 @@ class SocialLinkValidator
     /**
      * Validator constructor.
      */
-    public function __construct(array $drivers = null)
+    public function __construct(?array $drivers = null)
     {
         if (is_null($drivers)) {
             $drivers = config('social-link-validator.platforms');
@@ -33,7 +33,7 @@ class SocialLinkValidator
         }
 
         if (empty($this->instances[$driver])) {
-            $this->instances[$driver] = new $this->drivers[$driver]();
+            $this->instances[$driver] = new $this->drivers[$driver];
         }
 
         return $this->instances[$driver];
@@ -43,7 +43,7 @@ class SocialLinkValidator
     {
         foreach ($this->drivers as $driver => $class) {
             if (empty($this->instances[$driver])) {
-                $this->instances[$driver] = new $class();
+                $this->instances[$driver] = new $class;
             }
 
             if ($this->instances[$driver]->isValid($url)) {

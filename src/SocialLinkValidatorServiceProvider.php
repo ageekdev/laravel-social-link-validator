@@ -38,7 +38,7 @@ class SocialLinkValidatorServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__.'/../config/social-link-validator.php', 'social-link-validator');
 
         $this->app->singleton('laravel-social-link-validator', function ($app) {
-            return new SocialLinkValidator();
+            return new SocialLinkValidator;
         });
     }
 }

@@ -10,7 +10,7 @@ class LinkType
 
     public ?string $type = null;
 
-    public function __construct(bool $isValid = false, string $entityId = null, string $type = null)
+    public function __construct(bool $isValid = false, ?string $entityId = null, ?string $type = null)
     {
         $this->isValid = $isValid;
         $this->id = $entityId;

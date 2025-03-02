@@ -9,8 +9,7 @@ class SocialLink implements Rule
 {
     public function __construct(
         protected array $parameters
-    ) {
-    }
+    ) {}
 
     public function passes($attribute, $value): bool
     {
