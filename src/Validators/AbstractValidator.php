@@ -25,7 +25,7 @@ abstract class AbstractValidator implements ValidatorInterface
 
     final public function split(string $url): LinkType
     {
-        $result = new LinkType();
+        $result = new LinkType;
         $patterns = $this->patterns;
         $patternMaps = $this->patternMaps;
 

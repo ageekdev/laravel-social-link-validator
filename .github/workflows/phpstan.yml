@@ -19,8 +19,12 @@ jobs:
                   php-version: '8.2'
                   coverage: none
 
-            - name: Install Dependencies
-              run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress
+            - name: Install composer dependencies
+              uses: nick-fields/retry@v3
+              with:
+                  timeout_minutes: 3
+                  max_attempts: 5
+                  command: composer update --prefer-stable --prefer-dist --no-interaction --no-progress
 
             - name: Run PHPStan
               timeout-minutes: 2
