@@ -2,6 +2,15 @@
 
 All notable changes to `php-social-link-validator` will be documented in this file
 
+## v1.2.0 - 2025-03-02
+
+### What's Changed
+
+* Support Laravel 12 by @tintnaingwinn in https://github.com/ageekdev/laravel-social-link-validator/pull/3
+* Drop support Laravel 9
+
+**Full Changelog**: https://github.com/ageekdev/laravel-social-link-validator/compare/v1.0.1...v1.2.0
+
 ## support laravel 11 - 2024-04-08
 
 ### What's Changed
